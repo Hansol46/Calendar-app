@@ -1,5 +1,5 @@
 import { ComponentType } from "react";
-import { Calendar, Login } from "../pages";
+import { CalendarPage, LoginPage } from "../pages";
 
 export interface Route {
   path: string;
@@ -14,13 +14,13 @@ export enum RouteNames {
 export const publicRoutes: Route[] = [
   {
     path: RouteNames.LOGIN,
-    component: Login,
+    component: LoginPage,
   },
 ];
 
 export const privateRoutes: Route[] = [
   {
     path: RouteNames.CALENDAR,
-    component: Calendar,
+    component: CalendarPage,
   },
 ];

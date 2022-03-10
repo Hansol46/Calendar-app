@@ -3,14 +3,14 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
+// import IconButton from "@mui/material/IconButton";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { AuthActionCreator } from "../../store/reducers/authReducer/action-creators";
+import { useActions } from "../../hooks";
 
 export const Header = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch()
+  const { logout } = useActions();
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -27,7 +27,7 @@ export const Header = () => {
 
           <Typography pr={3}>Yury Kiryaev</Typography>
 
-          <Button color="inherit" onClick={() => dispatch(AuthActionCreator.logout())}>
+          <Button color="inherit" onClick={logout}>
             Выйти
           </Button>
         </Toolbar>

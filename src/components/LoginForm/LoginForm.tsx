@@ -1,5 +1,4 @@
 import { FC, useState } from "react";
-import { useDispatch } from "react-redux";
 import {
   Box,
   Card,
@@ -14,19 +13,19 @@ import {
 // Icons
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import { AuthActionCreator } from "../../store/reducers/authReducer/action-creators";
-import { useTypedSelector } from "../../hooks/useTypedSelector";
+import { useActions, useTypedSelector } from "../../hooks";
 
 export const LoginForm: FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
   const { error, isLoading } = useTypedSelector((state) => state.auth);
-  const dispatch = useDispatch();
+  const { login } = useActions();
 
   const onSubmitHandler = (e: any) => {
     e.preventDefault();
-    dispatch(AuthActionCreator.login(username, password));
+    login(username, password);
   };
 
   return (
@@ -48,7 +47,7 @@ export const LoginForm: FC = () => {
               <Typography variant="h4">Авторизация</Typography>
 
               {error && (
-                <Typography variant="body1" color="error" sx={{marginTop: 1}}>
+                <Typography variant="body1" color="error" sx={{ marginTop: 1 }}>
                   {error}
                 </Typography>
               )}
