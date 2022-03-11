@@ -33,14 +33,12 @@ export const CalendarPage: FC = () => {
     fetchEvents(user.username);
   }, []);
 
-  console.log('events',events)
+  console.log("events", events);
 
   const onDialogOpenHandler = () => setOpen(true);
   const onDialogCloseHandler = () => setOpen(false);
   return (
     <>
-      <Header />
-
       <Stack>
         <StaticDatePicker<Date>
           orientation="landscape"

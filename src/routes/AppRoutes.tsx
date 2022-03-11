@@ -1,27 +1,39 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { FC, useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { useActions, useTypedSelector } from "../hooks";
-import { User } from "../models";
+// Components
 import { CalendarPage, LoginPage } from "../pages";
+import { PrivateRoutes } from "./PrivateRoutes";
+// Hooks
+import { useActions, useTypedSelector } from "../hooks";
+// Types
+import { User } from "../models";
 
-export const AppRoutes = () => {
-  const { isAuth } = useTypedSelector((state) => state.auth);
+/**
+ * Компонент содержащий все маршруты проекта
+ */
+export const AppRoutes: FC = () => {
+  const { isAuth } = useTypedSelector(({ auth }) => auth);
   const { setAuth, setUser } = useActions();
-  // const isAuth = false;
-  console.log("isAuth", isAuth);
 
   useEffect(() => {
     if (localStorage.getItem("auth")) {
       setUser({ username: localStorage.getItem("username" || "") } as User);
       setAuth(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <Routes>
-      <Route path="/" element={<CalendarPage />} />
+      <Route path="/" element={<PrivateRoutes />}>
+        <Route index element={<CalendarPage />} />
+        <Route path="profile" element={<h1> PROFILE PAGE</h1>} />
+        <Route path="about" element={<h1> ABOUT PAGE</h1>} />
+      </Route>
+
       <Route path="/login" element={<LoginPage />} />
+
+      <Route path="*" element={<Navigate to={isAuth ? "/" : "/login"} />} />
     </Routes>
   );
 };

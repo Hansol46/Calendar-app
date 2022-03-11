@@ -14,6 +14,7 @@ import {
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useActions, useTypedSelector } from "../../hooks";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const LoginForm: FC = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,10 +23,15 @@ export const LoginForm: FC = () => {
 
   const { error, isLoading } = useTypedSelector((state) => state.auth);
   const { login } = useActions();
+  const navigate = useNavigate();
+  const location: any = useLocation();
 
   const onSubmitHandler = (e: any) => {
     e.preventDefault();
     login(username, password);
+    if (location?.state?.from) {
+      navigate(location.state?.from?.pathname || "/", { replace: true });
+    }
   };
 
   return (

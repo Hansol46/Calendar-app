@@ -2,7 +2,8 @@ import { AuthAction, AuthActionEnum, AuthState } from "./types";
 import { User } from "../../../models";
 
 const initialState: AuthState = {
-  isAuth: false,
+  // isAuth: false,
+  isAuth: !!localStorage.getItem("auth"),
   user: {} as User,
   error: "",
   isLoading: false,

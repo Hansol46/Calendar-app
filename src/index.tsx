@@ -12,7 +12,7 @@ import "./index.css";
 const app = (
   <Provider store={store}>
     <BrowserRouter>
-      <LocalizationProvider dateAdapter={AdapterDateFns} >
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
         <AppRoutes />
       </LocalizationProvider>
     </BrowserRouter>
