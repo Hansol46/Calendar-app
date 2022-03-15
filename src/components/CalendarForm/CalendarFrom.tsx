@@ -1,10 +1,13 @@
+import { FC, useState } from "react";
+// Material 
 import { DatePicker } from "@mui/lab";
 import { Box, Button, Grid, MenuItem, Select, TextField } from "@mui/material";
-import { useState } from "react";
+// Hooks
 import { useActions, useTypedSelector } from "../../hooks";
+// Types
 import { Calendar } from "../../models";
 
-export const CalendarForm = () => {
+export const CalendarForm: FC = () => {
   const [event, setEvent] = useState<Calendar>({
     author: "",
     date: null,

@@ -1,4 +1,13 @@
 import { Components, createTheme } from "@mui/material";
+import { ShapeOptions } from "@mui/system";
+// Colors
+import { grey, common } from "@mui/material/colors";
+// Types
+import { Themes } from "../models";
+
+const shape: ShapeOptions = {
+  borderRadius: 8,
+};
 
 const components: Components = {
   MuiTypography: {
@@ -11,18 +20,79 @@ const components: Components = {
       h6: { fontWeight: 500, fontSize: "0.675rem" },
     },
   },
+  // MuiPaper: {
+  //   defaultProps: {
+  //     elevation: 0,
+  //   },
+  // },
 };
 
+/**
+ * Светлая тема
+ */
 export const lightTheme = createTheme({
+  direction: "ltr",
+  shape,
   components,
   palette: {
     mode: "light",
+    background: {
+      default: "#E7E8ED",
+      paper: common.white,
+    },
+    primary: {
+      main: "#008FB4",
+      light: "#57bfe6",
+      dark: "#006184",
+      contrastText: common.white,
+    },
+    secondary: {
+      main: "#10c8d2",
+      light: "#67fbff",
+      dark: "#0097a1",
+      contrastText: common.white,
+    },
+    text: {
+      primary: grey[900],
+      secondary: grey[800],
+    },
   },
 });
 
+/**
+ * Темная тема
+ */
 export const darkTheme = createTheme({
   components,
   palette: {
     mode: "dark",
+    background: {
+      default: "#1c2025",
+      paper: "#282C34",
+    },
+    primary: {
+      main: "#008FB4",
+      light: "#57bfe6",
+      dark: "#006184",
+      contrastText: common.white,
+    },
+    secondary: {
+      main: "#10c8d2",
+      light: "#67fbff",
+      dark: "#0097a1",
+      contrastText: common.white,
+    },
+    text: {
+      primary: grey[50],
+      secondary: grey[400],
+    },
   },
 });
+
+/**
+ * Export themes
+ */
+export const themes: Themes = {
+  lightTheme,
+  darkTheme,
+};

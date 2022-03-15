@@ -6,6 +6,7 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 
 import { store } from "./store";
 import { AppRoutes } from "./routes/AppRoutes";
+import { MaterialThemeProvider } from "./context";
 
 import "./index.css";
 
@@ -13,7 +14,9 @@ const app = (
   <Provider store={store}>
     <BrowserRouter>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <AppRoutes />
+        <MaterialThemeProvider>
+          <AppRoutes />
+        </MaterialThemeProvider>
       </LocalizationProvider>
     </BrowserRouter>
   </Provider>

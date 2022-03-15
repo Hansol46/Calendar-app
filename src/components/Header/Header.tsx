@@ -1,15 +1,23 @@
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-// import IconButton from "@mui/material/IconButton";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { AuthActionCreator } from "../../store/reducers/authReducer/action-creators";
-import { useActions } from "../../hooks";
+// Material
+import {
+  Avatar,
+  List,
+  ListItem,
+  Stack,
+  AppBar,
+  Box,
+  Toolbar,
+  Typography,
+  Button,
+} from "@mui/material";
+// Icons
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import { Avatar, List, ListItem, Stack } from "@mui/material";
+// Hooks
+import { useActions } from "../../hooks";
+// import IconButton from "@mui/material/IconButton";
+// import { useDispatch } from "react-redux";
+// import { AuthActionCreator } from "../../store/reducers/authReducer/action-creators";
 
 interface Menu {
   title: string;
@@ -50,7 +58,7 @@ export const Header = () => {
 
               <List sx={{ display: "flex" }}>
                 {menu.map(({ title, link }) => (
-                  <ListItem sx={{ whiteSpace: "nowrap" }}>
+                  <ListItem key={title} sx={{ whiteSpace: "nowrap" }}>
                     <Link to={link}> {title} </Link>
                   </ListItem>
                 ))}

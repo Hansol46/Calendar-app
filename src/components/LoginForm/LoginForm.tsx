@@ -29,8 +29,11 @@ export const LoginForm: FC = () => {
   const onSubmitHandler = (e: any) => {
     e.preventDefault();
     login(username, password);
+
     if (location?.state?.from) {
-      navigate(location.state?.from?.pathname || "/", { replace: true });
+      navigate(location.state?.from?.pathname, { replace: true });
+    } else {
+      navigate("/");
     }
   };
 

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 // Components
-import { Layout } from "../components";
+import { Layout } from "../components/ui";
 // Hooks
 import { useTypedSelector } from "../hooks";
 
