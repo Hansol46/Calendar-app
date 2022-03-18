@@ -20,11 +20,6 @@ const components: Components = {
       h6: { fontWeight: 500, fontSize: "0.675rem" },
     },
   },
-  // MuiPaper: {
-  //   defaultProps: {
-  //     elevation: 0,
-  //   },
-  // },
 };
 
 /**

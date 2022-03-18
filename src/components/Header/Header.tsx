@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 // Material
 import {
+  // Link,
   Avatar,
   List,
   ListItem,
@@ -59,7 +60,9 @@ export const Header = () => {
               <List sx={{ display: "flex" }}>
                 {menu.map(({ title, link }) => (
                   <ListItem key={title} sx={{ whiteSpace: "nowrap" }}>
-                    <Link to={link}> {title} </Link>
+                    <Link to={link}>
+                      <Typography variant='body1' color='white'> {title} </Typography>
+                    </Link>
                   </ListItem>
                 ))}
               </List>
@@ -67,7 +70,7 @@ export const Header = () => {
 
             <Stack direction="row" gap={1} alignItems="center">
               <Avatar>YK</Avatar>
-              <Typography>Yury Kiryaev</Typography>
+              <Typography variant='body1'>Yury Kiryaev</Typography>
 
               <Button color="inherit" onClick={onLogoutHandler}>
                 Выйти

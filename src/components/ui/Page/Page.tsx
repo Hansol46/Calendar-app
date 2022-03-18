@@ -43,7 +43,7 @@ export const Page: FC<Props> = ({
     if (typeof title === "string") {
       return (
         <Box mt={2}>
-          <Typography variant="h3" >{title}</Typography>
+          <Typography variant="h2" >{title}</Typography>
         </Box>
       );
     }
