@@ -3,6 +3,7 @@
 Use this calendar for remember important date.
 Project made for traning skills and private interes.
 
+You can view on this link - [link](https://www.google.com/)
 # Tech: 
  - React 
  - TypeScript 
