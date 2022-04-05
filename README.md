@@ -3,7 +3,7 @@
 Use this calendar for remember important date.
 Project made for traning skills and private interes.
 
-You can view on this link - [link](https://day-viewer.vercel.app/login)
+You can view on this link - [link](https://day-viewer.vercel.app/login) <br />
 mocks data: public/users.json
 
 # Tech: 
