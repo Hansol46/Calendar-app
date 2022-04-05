@@ -12,7 +12,7 @@ export const Helmet: FC<Props> = ({ title, children }) => {
   return (
     <>
       <ReactHelmet>
-        <title>{title}</title>
+        <title>{title} | DayViewer</title>
       </ReactHelmet>
       {children}
     </>

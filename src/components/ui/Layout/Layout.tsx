@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { Outlet } from "react-router-dom";
 // Components
-import { Footer } from "../../Footer";
 import { Header } from "../../Header";
 
 /**
@@ -13,8 +12,6 @@ export const Layout: FC = () => {
       <Header />
 
       <Outlet />
-
-      <Footer />
     </>
   );
 };

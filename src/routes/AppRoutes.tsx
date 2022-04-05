@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 // Components
-import { CalendarPage, LoginPage, ProfilePage } from "../pages";
+import { AboutPage, CalendarPage, LoginPage, ProfilePage } from "../pages";
 import { PrivateRoutes } from "./PrivateRoutes";
 // Hooks
 import { useActions, useTypedSelector } from "../hooks";
@@ -27,8 +27,10 @@ export const AppRoutes: FC = () => {
     <Routes>
       <Route path="/" element={<PrivateRoutes />}>
         <Route index element={<CalendarPage />} />
+
         <Route path="profile" element={<ProfilePage />} />
-        <Route path="about" element={<h1> ABOUT PAGE</h1>} />
+
+        <Route path="about" element={<AboutPage />} />
       </Route>
 
       <Route path="/login" element={<LoginPage />} />

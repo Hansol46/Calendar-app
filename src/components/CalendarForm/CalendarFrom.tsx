@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
-// Material 
+// Material
 import { DatePicker } from "@mui/lab";
-import { Box, Button, Grid, MenuItem, Select, TextField } from "@mui/material";
+import { Box, Button, Grid, MenuItem, TextField } from "@mui/material";
 // Hooks
 import { useActions, useTypedSelector } from "../../hooks";
 // Types
@@ -17,14 +17,15 @@ export const CalendarForm: FC = () => {
   const { createEvent } = useActions();
   const { guests, events } = useTypedSelector((state) => state.calendar);
   const { user } = useTypedSelector((state) => state.auth);
+  console.log("events", events);
 
-/**
- * guest СЛОМАН
- * ПОЧИНИТь SELECT
- */
+  /**
+   * guest СЛОМАН
+   * ПОЧИНИТь SELECT
+   */
   const onSubmitHandler = (e: any) => {
     e.preventDefault();
-    createEvent({ ...event, author: user.username })
+    createEvent({ ...event, author: user.username });
     console.log({ ...event, author: user.username });
   };
 

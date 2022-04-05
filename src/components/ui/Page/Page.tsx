@@ -1,5 +1,6 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import { FC, ReactElement, ReactNode, useMemo } from "react";
+import { Footer } from "../../Footer";
 import { ContentPreloader } from "../ContentPreloader";
 import { Helmet } from "../Helmet";
 
@@ -43,7 +44,9 @@ export const Page: FC<Props> = ({
     if (typeof title === "string") {
       return (
         <Box mt={2}>
-          <Typography variant="h2" >{title}</Typography>
+          <Typography variant="h2" sx={{ fontWeight: 500 }}>
+            {title}
+          </Typography>
         </Box>
       );
     }
@@ -73,6 +76,8 @@ export const Page: FC<Props> = ({
 
             {children}
           </Stack>
+
+          <Footer />
         </Container>
       </ContentPreloader>
     </Helmet>

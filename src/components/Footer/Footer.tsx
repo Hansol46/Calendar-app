@@ -1,5 +1,9 @@
 import { FC } from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+// Icons
+import TwitterIcon from "@mui/icons-material/Twitter";
+import TelegramIcon from "@mui/icons-material/Telegram";
+import EmailIcon from '@mui/icons-material/Email';
 
 export const Footer: FC = () => {
   return (
@@ -7,10 +11,20 @@ export const Footer: FC = () => {
       component="footer"
       sx={{
         display: "flex",
-        justifyContent: "end",
+        padding: 3,
+        flexDirection: "column",
+        alignItems: 'center',
       }}
     >
-      © 2022 create by Yury
+      <Typography> © 2022 version 1.2.1 </Typography>
+      
+      <Box>
+        <TwitterIcon />
+
+        <TelegramIcon />
+
+        <EmailIcon />
+      </Box>
     </Box>
   );
 };

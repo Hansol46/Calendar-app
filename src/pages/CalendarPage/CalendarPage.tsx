@@ -2,16 +2,15 @@ import { FC, useEffect, useState } from "react";
 import isWeekend from "date-fns/isWeekend";
 // Material
 import {
-  Box,
+  Stack,
   Button,
   Dialog,
-  DialogContent,
-  DialogTitle,
   Divider,
-  IconButton,
-  Stack,
   TextField,
+  IconButton,
   Typography,
+  DialogTitle,
+  DialogContent,
 } from "@mui/material";
 // Icons
 import CloseIcon from "@mui/icons-material/Close";
@@ -38,6 +37,7 @@ export const CalendarPage: FC = () => {
   useEffect(() => {
     fetchGuests();
     fetchEvents(user.username);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   console.log("events", events);
