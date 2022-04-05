@@ -4,6 +4,8 @@ Use this calendar for remember important date.
 Project made for traning skills and private interes.
 
 You can view on this link - [link](https://day-viewer.vercel.app/login)
+mocks data: public/users.json
+
 # Tech: 
  - React 
  - TypeScript 
